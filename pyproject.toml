@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "ocr-service"
+version = "0.1.0"
+description = ""
+authors = ["jonaskahn <tuyendev@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+sanic = "^24.6.0"
+sanic-cors = "^2.2.0"
+python-dotenv = "^1.0.1"
+surya-ocr = { git = "https://github.com/jonaskahn/surya.git", branch = "dev" }
+python-magic = "^0.4.27"
+pymupdf = "^1.25.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

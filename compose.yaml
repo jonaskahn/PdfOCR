@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  ocr-service:
+    image: opensourcebssd/service-ocr:latest
+    container_name: ocr-service
+    hostname: ocr-service
+    environment:
+      - DEBUG_MODE=off
+      - SUPPORTED_LANGUAGES=vi,en
+      - UPLOAD_DIR=/tmp/storage
+      - MAX_FILE_SIZE=50000000
+      - MINIMUM_WORDS_PER_PAGE=200
+      - WATERMARK_PATTERNS=watermark|confidential|draft|copy|www.LuatVietnam.vn
+    ports:
+      - "8000:8000"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]

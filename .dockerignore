@@ -1,0 +1,11 @@
+**/.env
+Dockerfile
+tests
+build
+.idea
+server.spec
+build-multi.sh
+.git
+dist
+*/__pycache__/
+__pycache__/
